@@ -1,9 +1,35 @@
 {
-  "name": "task",
+  "name": "ecommerce-api",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "description": "A simple e-commerce API built with Node.js, Typescript, Express and MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "start": "tsc && node dist/server.js",
+    "build": "tsc"
+  },
   "dependencies": {
-    "typescript": "^4.9.5"
-  }
+    "bcrypt": "^5.0.0",
+    "express": "^4.17.1",
+    "joi": "^17.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.9"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.8",
+    "@types/joi": "^17.2.3",
+    "@types/jsonwebtoken": "^8.3.4",
+    "@types/mongoose": "^5.7.32",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.2.4"
+  },
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "express",
+    "mongodb",
+    "ecommerce",
+    "api"
+  ],
+  "author": "RxGoodness",
+  "license": "MIT"
 }
