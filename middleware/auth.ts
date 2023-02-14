@@ -19,6 +19,6 @@ console.log("token", token)
 req.user = await AdminDB.findById(decoded as JwtPayload)
 next();
 } catch (err) {
-res.status(400).send('Invalid token!!!!');
+res.status(400).send('Invalid token!');
 }
 }

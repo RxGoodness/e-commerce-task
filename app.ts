@@ -20,7 +20,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use("/public", express.static("public"));
 
+//Redirecting page
+app.get('/', (req, res) => {
+    res.redirect('/api/products');
+  });
+  
 // Routes
+app.get('/', (req, res) => {
+    res.redirect('/api/products');
+  });
 app.use("/api/users", admin);
 app.use("/api/products", products);
 app.use(notFound);

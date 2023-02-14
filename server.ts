@@ -1,11 +1,11 @@
+import app from './app';
 import db  from './config/db';
 import envValues  from './config/default';
-// import dotenv from "dotenv";
+import dotenv from "dotenv";
 
 // import app from './app';
-// dotenv.config();
-import app from './app';
-require('dotenv').config();
+dotenv.config();
+// require('dotenv').config();
 const startServer = async () => {
     try {
         await db();
