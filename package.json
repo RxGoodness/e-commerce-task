@@ -38,7 +38,7 @@
     "api"
   ],
   "engines": {
-    "node": ">=14.20.1"
+    "node": "18.14.0"
   },
   "author": "RxGoodness",
   "license": "MIT",
