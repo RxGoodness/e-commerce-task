@@ -18,7 +18,7 @@
     "joi": "^17.2.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.9",
-    "ts-node": "^10.9.1",
+    "ts-node": "^10.8.1",
     "typescript": "^4.9.4"
   },
   "devDependencies": {
@@ -37,6 +37,9 @@
     "ecommerce",
     "api"
   ],
+  "engines": {
+    "node": ">=14.20.1"
+  },
   "author": "RxGoodness",
   "license": "MIT",
   "repository": "https://github.com/RxGoodness/e-commerce-task.git"
