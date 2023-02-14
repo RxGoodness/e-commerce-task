@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\adedokunbt\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add -D nodemon
+  C:\Program Files\nodejs\node.exe C:\Users\adedokunbt\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js build
 
 PATH: 
   C:\Users\adedokunbt\bin;C:\Users\adedokunbt\AppData\Local\Programs\Git\mingw64\bin;C:\Users\adedokunbt\AppData\Local\Programs\Git\usr\local\bin;C:\Users\adedokunbt\AppData\Local\Programs\Git\usr\bin;C:\Users\adedokunbt\AppData\Local\Programs\Git\usr\bin;C:\Users\adedokunbt\AppData\Local\Programs\Git\mingw64\bin;C:\Users\adedokunbt\AppData\Local\Programs\Git\usr\bin;C:\Users\adedokunbt\bin;C:\Program Files\Python311\Scripts;C:\Program Files\Python311;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\nodejs;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\nodejs;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\nodejs;C:\Users\adedokunbt\AppData\Local\Microsoft\WindowsApps;C:\Users\adedokunbt\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\adedokunbt\AppData\Local\Programs\Git\cmd;C:\Users\adedokunbt\AppData\Roaming\npm;C:\Users\adedokunbt\AppData\Roaming\Flow;C:\Users\adedokunbt\AppData\Roaming\Flow;C:\Users\adedokunbt\AppData\Local\Programs\Git\usr\bin\vendor_perl;C:\Users\adedokunbt\AppData\Local\Programs\Git\usr\bin\core_perl
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  SyntaxError: C:\Users\adedokunbt\Documents\learning\e-commerce-task\package.json: Unexpected string in JSON at position 251
+  SyntaxError: C:\Users\adedokunbt\Documents\learning\e-commerce-task\package.json: Unexpected token } in JSON at position 239
       at JSON.parse (<anonymous>)
       at C:\Users\adedokunbt\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1629:59
       at Generator.next (<anonymous>)
@@ -23,14 +23,13 @@ Trace:
 
 npm manifest: 
   {
-    "name": "ecommerce-api",
+    "name": "server.ts",
     "version": "1.0.0",
     "description": "A simple e-commerce API built with Node.js, Typescript, Express and MongoDB",
-    "main": "server.js",
+    "main": "server.ts",
     "scripts": {
-      "start": "tsc && node dist/server.js",
-      "build": "tsc"
-      "start:dev": "nodemon"
+      "build": "tsc",
+      "start": "ts-node ./server.ts",
     },
     "dependencies": {
       "@types/cors": "^2.8.13",
@@ -50,7 +49,7 @@ npm manifest:
       "@types/joi": "^17.2.3",
       "@types/jsonwebtoken": "^8.3.4",
       "@types/mongoose": "^5.7.32",
-      "ts-node": "^9.0.0",
+      "ts-node": "^10.9.1",
       "typescript": "^4.2.4"
     },
     "keywords": [
@@ -62,7 +61,8 @@ npm manifest:
       "api"
     ],
     "author": "RxGoodness",
-    "license": "MIT"
+    "license": "MIT",
+    "repository": "https://github.com/RxGoodness/e-commerce-task.git"
   }
 
 yarn manifest: 
@@ -808,6 +808,13 @@ Lockfile:
       "@aws-sdk/util-buffer-from" "3.208.0"
       tslib "^2.3.1"
   
+  "@cspotcode/source-map-support@^0.8.0":
+    version "0.8.1"
+    resolved "https://registry.yarnpkg.com/@cspotcode/source-map-support/-/source-map-support-0.8.1.tgz#00629c35a688e05a88b1cda684fb9d5e73f000a1"
+    integrity sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==
+    dependencies:
+      "@jridgewell/trace-mapping" "0.3.9"
+  
   "@hapi/hoek@^9.0.0":
     version "9.3.0"
     resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.3.0.tgz#8368869dcb735be2e7f5cb7647de78e167a251fb"
@@ -819,6 +826,24 @@ Lockfile:
     integrity sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==
     dependencies:
       "@hapi/hoek" "^9.0.0"
+  
+  "@jridgewell/resolve-uri@^3.0.3":
+    version "3.1.0"
+    resolved "https://registry.yarnpkg.com/@jridgewell/resolve-uri/-/resolve-uri-3.1.0.tgz#2203b118c157721addfe69d47b70465463066d78"
+    integrity sha512-F2msla3tad+Mfht5cJq7LSXcdudKTWCVYUgw6pLFOOHSTtZlj6SWNYAp+AhuqLmWdBO2X5hPrLcu8cVP8fy28w==
+  
+  "@jridgewell/sourcemap-codec@^1.4.10":
+    version "1.4.14"
+    resolved "https://registry.yarnpkg.com/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.4.14.tgz#add4c98d341472a289190b424efbdb096991bb24"
+    integrity sha512-XPSJHWmi394fuUuzDnGz1wiKqWfo1yXecHQMRf2l6hztTO+nPru658AyDngaBe7isIxEkRsPR3FZh+s7iVa4Uw==
+  
+  "@jridgewell/trace-mapping@0.3.9":
+    version "0.3.9"
+    resolved "https://registry.yarnpkg.com/@jridgewell/trace-mapping/-/trace-mapping-0.3.9.tgz#6534fd5933a53ba7cbf3a17615e273a0d1273ff9"
+    integrity sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==
+    dependencies:
+      "@jridgewell/resolve-uri" "^3.0.3"
+      "@jridgewell/sourcemap-codec" "^1.4.10"
   
   "@mapbox/node-pre-gyp@^1.0.10":
     version "1.0.10"
@@ -851,6 +876,26 @@ Lockfile:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/@sideway/pinpoint/-/pinpoint-2.0.0.tgz#cff8ffadc372ad29fd3f78277aeb29e632cc70df"
     integrity sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==
+  
+  "@tsconfig/node10@^1.0.7":
+    version "1.0.9"
+    resolved "https://registry.yarnpkg.com/@tsconfig/node10/-/node10-1.0.9.tgz#df4907fc07a886922637b15e02d4cebc4c0021b2"
+    integrity sha512-jNsYVVxU8v5g43Erja32laIDHXeoNvFEpX33OK4d6hljo3jDhCBDhx5dhCCTMWUojscpAagGiRkBKxpdl9fxqA==
+  
+  "@tsconfig/node12@^1.0.7":
+    version "1.0.11"
+    resolved "https://registry.yarnpkg.com/@tsconfig/node12/-/node12-1.0.11.tgz#ee3def1f27d9ed66dac6e46a295cffb0152e058d"
+    integrity sha512-cqefuRsh12pWyGsIoBKJA9luFu3mRxCA+ORZvA4ktLSzIuCUtWVxGIuXigEwO5/ywWFMZ2QEGKWvkZG1zDMTag==
+  
+  "@tsconfig/node14@^1.0.0":
+    version "1.0.3"
+    resolved "https://registry.yarnpkg.com/@tsconfig/node14/-/node14-1.0.3.tgz#e4386316284f00b98435bf40f72f75a09dabf6c1"
+    integrity sha512-ysT8mhdixWK6Hw3i1V2AeRqZ5WfXg1G43mqoYlM2nc6388Fq5jcXyr5mRsqViLx/GJYdoL0bfXD8nmF+Zn/Iow==
+  
+  "@tsconfig/node16@^1.0.2":
+    version "1.0.3"
+    resolved "https://registry.yarnpkg.com/@tsconfig/node16/-/node16-1.0.3.tgz#472eaab5f15c1ffdd7f8628bd4c4f753995ec79e"
+    integrity sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==
   
   "@types/bcryptjs@^2.4.2":
     version "2.4.2"
@@ -995,6 +1040,16 @@ Lockfile:
       mime-types "~2.1.34"
       negotiator "0.6.3"
   
+  acorn-walk@^8.1.1:
+    version "8.2.0"
+    resolved "https://registry.yarnpkg.com/acorn-walk/-/acorn-walk-8.2.0.tgz#741210f2e2426454508853a2f44d0ab83b7f69c1"
+    integrity sha512-k+iyHEuPgSw6SbuDpGQM+06HQUa04DZ3o+F6CSzXMvvI5KMvnaEqXe+YVe555R9nn6GPt404fos4wcgpw12SDA==
+  
+  acorn@^8.4.1:
+    version "8.8.2"
+    resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.8.2.tgz#1b2f25db02af965399b9776b0c2c391276d37c4a"
+    integrity sha512-xjIYgE8HBrkpd/sJqOGNspf8uHG+NOHGOw6a/Urj8taM2EXfdNAH2oFcPeIFfsv3+kz/mJrS5VuMqbNLjCa2vw==
+  
   agent-base@6:
     version "6.0.2"
     resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-6.0.2.tgz#49fff58577cfee3f37176feab4c22e00f86d7f77"
@@ -1118,11 +1173,6 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz#f8e71132f7ffe6e01a5c9697a4c6f3e48d5cc819"
     integrity sha512-zRpUiDwd/xk6ADqPMATG8vc9VPrkck7T07OIx0gnjmJAnHnTVXNQG3vfvWNuiZIkwu9KrKdA1iJKfsfTVxE6NA==
-  
-  buffer-from@^1.0.0:
-    version "1.1.2"
-    resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.1.2.tgz#2b146a6fd72e80b4f55d255f35ed59a3a9a41bd5"
-    integrity sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==
   
   buffer@^5.6.0:
     version "5.7.1"
@@ -2074,19 +2124,6 @@ Lockfile:
       ip "^2.0.0"
       smart-buffer "^4.2.0"
   
-  source-map-support@^0.5.17:
-    version "0.5.21"
-    resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.21.tgz#04fe7c7f9e1ed2d662233c28cb2b35b9f63f6e4f"
-    integrity sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w==
-    dependencies:
-      buffer-from "^1.0.0"
-      source-map "^0.6.0"
-  
-  source-map@^0.6.0:
-    version "0.6.1"
-    resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
-    integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
-  
   sparse-bitfield@^3.0.3:
     version "3.0.3"
     resolved "https://registry.yarnpkg.com/sparse-bitfield/-/sparse-bitfield-3.0.3.tgz#ff4ae6e68656056ba4b3e792ab3334d38273ca11"
@@ -2163,16 +2200,23 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/tr46/-/tr46-0.0.3.tgz#8184fd347dac9cdc185992f3a6622e14b9d9ab6a"
     integrity sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==
   
-  ts-node@^9.0.0:
-    version "9.1.1"
-    resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-9.1.1.tgz#51a9a450a3e959401bda5f004a72d54b936d376d"
-    integrity sha512-hPlt7ZACERQGf03M253ytLY3dHbGNGrAq9qIHWUY9XHYl1z7wYngSr3OQ5xmui8o2AaxsONxIzjafLUiWBo1Fg==
+  ts-node@^10.9.1:
+    version "10.9.1"
+    resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-10.9.1.tgz#e73de9102958af9e1f0b168a6ff320e25adcff4b"
+    integrity sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==
     dependencies:
+      "@cspotcode/source-map-support" "^0.8.0"
+      "@tsconfig/node10" "^1.0.7"
+      "@tsconfig/node12" "^1.0.7"
+      "@tsconfig/node14" "^1.0.0"
+      "@tsconfig/node16" "^1.0.2"
+      acorn "^8.4.1"
+      acorn-walk "^8.1.1"
       arg "^4.1.0"
       create-require "^1.1.0"
       diff "^4.0.1"
       make-error "^1.1.1"
-      source-map-support "^0.5.17"
+      v8-compile-cache-lib "^3.0.1"
       yn "3.1.1"
   
   tslib@^1.11.1:
@@ -2217,6 +2261,11 @@ Lockfile:
     version "8.3.2"
     resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
     integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
+  
+  v8-compile-cache-lib@^3.0.1:
+    version "3.0.1"
+    resolved "https://registry.yarnpkg.com/v8-compile-cache-lib/-/v8-compile-cache-lib-3.0.1.tgz#6336e8d71965cb3d35a1bbb7868445a7c05264bf"
+    integrity sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==
   
   vary@^1, vary@~1.1.2:
     version "1.1.2"
