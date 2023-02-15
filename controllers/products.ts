@@ -3,7 +3,8 @@ import Product from "../model/products";
 import { ProductJoiSchema } from "../middleware/validator";
 import asyncHandler from "express-async-handler";
 
-const createProduct = async (req: Request, res: Response): Promise<void> => {
+const createProduct = asyncHandler(
+async (req: Request, res: Response): Promise<void> => {
   await ProductJoiSchema.validateAsync(req.body);
   let product = new Product({ ...req.body, userId: req.user.id });
   try {
@@ -12,9 +13,10 @@ const createProduct = async (req: Request, res: Response): Promise<void> => {
   } catch (error) {
     res.status(500).send(error);
   }
-};
+});
 
-const getProducts = async (req: Request, res: Response): Promise<void> => {
+const getProducts = asyncHandler(
+async (req: Request, res: Response): Promise<void> => {
   const page = parseInt(req.query.page as string) || 1;
   const limit = parseInt(req.query.limit as string) || 10;
   try {
@@ -25,9 +27,10 @@ const getProducts = async (req: Request, res: Response): Promise<void> => {
   } catch (error) {
     res.status(500).send(error);
   }
-};
+});
 
-const getProduct = async (req: Request, res: Response): Promise<void> => {
+const getProduct = asyncHandler(
+async (req: Request, res: Response): Promise<void> => {
   const id = req.params.id;
   try {
     const product = await Product.findById(id);
@@ -38,7 +41,7 @@ const getProduct = async (req: Request, res: Response): Promise<void> => {
   } catch (error) {
     res.status(500).send(error);
   }
-};
+});
 
 const updateProduct = asyncHandler(
  async (req: Request, res: Response): Promise<void> => {
@@ -63,7 +66,8 @@ const updateProduct = asyncHandler(
       });
   } )
 
-const deleteProduct = async (req: Request, res: Response): Promise<void> => {
+const deleteProduct = asyncHandler(
+async (req: Request, res: Response): Promise<void> => {
   const id = req.params.id;
   try {
     const findProduct = await Product.findById(id);
@@ -85,6 +89,6 @@ const deleteProduct = async (req: Request, res: Response): Promise<void> => {
   } catch (error) {
     res.status(500).send(error);
   }
-};
+});
 
 export { createProduct, getProducts, getProduct, updateProduct, deleteProduct };
