@@ -3,6 +3,7 @@ import Joi from "joi";
 //   /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
 // const PasswordError =
 //   "Password must be at least 8 character, include uppercase, lowercase, digit and special character.";
+
 const AdminJoiSchema = Joi.object({
   name: Joi.string().required(),
   email: Joi.string().email().message("Enter valid email").required(),

@@ -14,8 +14,6 @@ if (!authHeader) return res.status(401).send('Access denied. No token provided')
 try {
    const token = authHeader.split(" ")[1];
 const decoded = verify(token, envValues.jwtSecret);
-console.log(decoded)
-console.log("token", token)
 req.user = await AdminDB.findById(decoded as JwtPayload)
 next();
 } catch (err) {
