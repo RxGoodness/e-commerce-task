@@ -7,8 +7,8 @@
 4. create an `.env` file at the root of server folder - add the necessary credentials.
 
 ## ENDPOINTS
-BaseUrl - localhost:5033 (Local)
-BaseUrl - https://e-commerce-task.onrender.com/  (hosted on render)
+BaseUrl - http://localhost:5033 (Local)
+BaseUrl - https://e-commerce-task.onrender.com  (hosted on render)
 
 The base urls are made to be redirected to get all products endpoint (/api/products)
 
